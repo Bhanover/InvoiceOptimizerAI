@@ -1,0 +1,63 @@
+/* ── Dashboard — estilos específicos ────────────────────── */
+
+.kpi {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.kpi::after {
+  content: '';
+  position: absolute;
+  top: -24px; right: -24px;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  opacity: 0.06;
+}
+.kpi:hover { border-color: var(--border3); }
+.kpi.green::after  { background: var(--green); }
+.kpi.cyan::after   { background: var(--cyan); }
+.kpi.amber::after  { background: var(--amber); }
+.kpi.red::after    { background: var(--red); }
+.kpi.blue::after   { background: var(--blue); }
+.kpi.purple::after { background: var(--purple); }
+
+.kpi-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text3);
+  margin-bottom: 10px;
+}
+.kpi-value {
+  font-family: var(--display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+}
+.kpi-sub { font-size: 0.68rem; color: var(--text3); }
+.kpi.green .kpi-value  { color: var(--green); }
+.kpi.cyan .kpi-value   { color: var(--cyan); }
+.kpi.amber .kpi-value  { color: var(--amber); }
+.kpi.red .kpi-value    { color: var(--red); }
+.kpi.blue .kpi-value   { color: var(--blue); }
+.kpi.purple .kpi-value { color: var(--purple); }
+
+.chart-container { position: relative; height: 220px; }
+
+/* Top ahorro — última fila sin borde */
+.card > div > div:last-child {
+  border-bottom: none !important;
+}
+
+@media (max-width: 768px) {
+  .chart-container { height: 160px; }
+  .kpi-value { font-size: 1.6rem; }
+}

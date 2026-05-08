@@ -1,0 +1,72 @@
+/* ── Usuarios & Perfil ── */
+
+/* ── Perfil — ficha de datos ─────────────────────────────── */
+.perfil-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 16px;
+  max-width: 860px;
+}
+
+/* Avatar / info cuenta */
+.perfil-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--green-dim);
+  border: 1px solid rgba(34,199,161,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+/* Formulario perfil */
+.perfil-form .form-input {
+  width: 100%;
+  display: block;
+  margin-bottom: 12px;
+}
+.perfil-form .btn { width: 100%; margin-top: 4px; }
+
+/* ── Tabla usuarios ──────────────────────────────────────── */
+.usuarios-crear .form-input {
+  margin-bottom: 0;
+}
+
+/* Modal editar usuario */
+#modal-editar-usuario .modal-box {
+  max-width: 440px;
+  width: 100%;
+}
+#modal-editar-usuario .form-input,
+#modal-editar-usuario select.form-input {
+  width: 100%;
+  display: block;
+  margin-bottom: 14px;
+}
+#modal-editar-usuario .modal-footer .btn-primary {
+  flex: 1;
+}
+
+/* Dato readonly en modal (nombre/email) */
+.modal-dato {
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 9px 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 14px;
+  font-family: var(--font);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .perfil-grid { grid-template-columns: 1fr; max-width: 100%; }
+}
+

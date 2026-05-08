@@ -1,0 +1,192 @@
+/* ── Ficha de Factura ── */
+
+/* Cabecera */
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+.breadcrumb a { color: var(--green); text-decoration: none; }
+.breadcrumb .active { color: var(--text); }
+.factura-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.factura-header h1 { margin: 0; font-size: 1.2rem; font-weight: 700; }
+.factura-id { color: var(--text3); font-weight: 400; }
+.factura-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-top: 6px;
+}
+
+/* Layout dos columnas */
+.factura-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: start;
+}
+.factura-side { display: flex; flex-direction: column; gap: 12px; }
+
+/* Card de datos unificado sin hover intrusivo */
+.factura-datos-card { padding: 0; overflow: hidden; }
+.factura-datos-card:hover { transform: none; }
+
+/* Bloques internos del card de datos */
+.fblock { padding: 16px 20px; }
+.fblock-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--text3);
+  margin-bottom: 10px;
+}
+.fdivider { height: 1px; background: var(--border); }
+
+/* Filas clave-valor */
+.frow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+.frow:last-child { border-bottom: none; }
+.fl { color: var(--text3); flex-shrink: 0; }
+.fv { color: var(--text); text-align: right; }
+.fv.mono { font-family: var(--mono); font-size: 0.8rem; }
+.frow-total { margin-top: 4px; padding-top: 8px; border-top: 1px solid var(--border2); border-bottom: none; }
+.fv-total { color: var(--green) !important; font-size: 1rem; font-weight: 600; }
+.fv-ahorro { color: var(--green) !important; }
+
+/* Tabla compacta P1/P2 */
+.factura-tabla-compacta { font-size: 0.82rem; }
+.ftc-head {
+  display: grid;
+  grid-template-columns: 1fr 90px 90px;
+  gap: 8px;
+  padding: 3px 0 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text4);
+}
+.ftc-head span:not(:first-child) { text-align: right; }
+.ftc-row {
+  display: grid;
+  grid-template-columns: 1fr 90px 90px;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+.ftc-row:last-child { border-bottom: none; }
+.ftc-row span:not(:first-child) { text-align: right; font-family: var(--mono); font-size: 0.79rem; color: var(--text2); }
+
+/* Fechas sidebar */
+.fecha-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+.fecha-item:last-child { border-bottom: none; }
+.fecha-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-top: 5px;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(34,199,161,0.5);
+}
+
+/* Oferta asignada */
+.oferta-card { margin-bottom: 0; }
+.oferta-nombre-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.oferta-nombre { font-size: 1rem; font-weight: 700; color: var(--text); }
+.oferta-com    { font-size: 0.82rem; color: var(--text3); }
+.oferta-email  { font-size: 0.78rem; color: var(--text3); font-style: italic; }
+
+.oferta-precios {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.oferta-precio-item {
+  padding: 12px 10px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  background: rgba(53,242,192,0.03);
+}
+.oferta-precio-item:last-child { border-right: none; }
+.oferta-precio-label {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text3);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.oferta-precio-val {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.oferta-vacia, .oferta-missing {
+  font-size: 0.85rem;
+  color: var(--text3);
+  padding: 8px 0;
+}
+.oferta-missing { color: var(--amber); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .factura-body { grid-template-columns: 1fr; }
+  .oferta-precios { grid-template-columns: repeat(3, 1fr); }
+  .oferta-precio-item:nth-child(3) { border-right: none; }
+  .oferta-precio-item:nth-child(4),
+  .oferta-precio-item:nth-child(5) { border-top: 1px solid var(--border); }
+}
+@media (max-width: 600px) {
+  .ftc-head, .ftc-row { grid-template-columns: 1fr 80px 80px; }
+  .oferta-precios { grid-template-columns: repeat(2, 1fr); }
+}
+
+.factura-tag {
+    display: inline-flex;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    background: var(--bg3);
+    color: var(--text3);
+    border: 1px solid var(--border2);
+}

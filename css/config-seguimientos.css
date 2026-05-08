@@ -1,0 +1,238 @@
+/* ──────────────────────────────────────────────────────────
+   CONFIG-SEGUIMIENTOS — modal pro (estable y sin bugs)
+────────────────────────────────────────────────────────── */
+
+/* ── Box ─────────────────────────────────────────────── */
+.cseg-box {
+    max-width: 540px;
+    padding: 0;
+   
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.cseg-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--bg3), var(--bg2));
+}
+
+.cseg-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cseg-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--green-dim);
+    border: 1px solid rgba(53, 242, 192, 0.18);
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Textos ─────────────────────────────────────────── */
+.cseg-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.cseg-subtitle {
+    font-size: 0.68rem;
+    color: var(--text4);
+    margin-top: 2px;
+}
+
+/* ── Sections ───────────────────────────────────────── */
+.cseg-section {
+    padding: 18px 24px;
+}
+
+.cseg-section--inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.cseg-section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 4px;
+}
+
+.cseg-section-hint {
+    font-size: 0.7rem;
+    color: var(--text4);
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+/* ── Dots ───────────────────────────────────────────── */
+.cseg-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+.cseg-dot--green { background: var(--green); }
+.cseg-dot--amber { background: var(--amber); }
+.cseg-dot--red   { background: var(--red); }
+
+/* ── Divider ───────────────────────────────────────── */
+.cseg-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 24px;
+}
+
+/* ── Time layout ────────────────────────────────────── */
+.cseg-time-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.cseg-time-field {
+    flex: 1;
+    min-width: 0; /* FIX importante */
+}
+
+.cseg-field-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text4);
+    margin-bottom: 6px;
+}
+
+.cseg-time-sep {
+    font-size: 1rem;
+    color: var(--border3);
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+/* ── Stepper ───────────────────────────────────────── */
+.cseg-number-wrap {
+    display: flex;
+    align-items: center;
+    background: var(--input-bg);
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.cseg-step {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+    height: 38px;
+    color: var(--text3);
+    transition: 0.15s;
+}
+
+.cseg-step:hover {
+    color: var(--text);
+    background: var(--bg4);
+}
+
+.cseg-step--up:hover { color: var(--green); }
+.cseg-step--down:hover { color: var(--red); }
+
+/* click feedback */
+.cseg-step:active {
+    transform: scale(0.95);
+}
+
+/* ── Input ─────────────────────────────────────────── */
+.cseg-number-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-weight: 700;
+    color: var(--text);
+    width: 100%;
+    font-family: var(--mono);
+    height: 38px;
+    min-width: 0;
+}
+
+.cseg-number-input::-webkit-inner-spin-button,
+.cseg-number-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ── Pill ──────────────────────────────────────────── */
+.cseg-total-pill {
+    background: var(--green-dim);
+    color: var(--green);
+    border: 1px solid rgba(53, 242, 192, 0.18);
+    border-radius: 20px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0 12px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+}
+
+/* ── Footer ────────────────────────────────────────── */
+.cseg-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 16px 24px 20px;
+    border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 540px) {
+
+    .cseg-box {
+        margin: 10px;
+    }
+
+    .cseg-time-row {
+        flex-wrap: wrap;
+    }
+
+    .cseg-time-sep {
+        display: none;
+    }
+
+    .cseg-time-field {
+        flex: 1 1 100%;
+    }
+
+    .cseg-total-pill {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cseg-section--inline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* FIX táctil */
+    .cseg-step:hover {
+        background: transparent;
+        color: var(--text3);
+    }
+}
+

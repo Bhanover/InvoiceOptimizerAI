@@ -1,0 +1,48 @@
+/* ── SIDEBAR COLAPSABLE ──────────────────────────────────── */
+
+html.sidebar-pre-collapsed #sidebar   { width: 60px; overflow: hidden; }
+html.sidebar-pre-collapsed #main      { margin-left: 60px; }
+html.sidebar-pre-collapsed #sidebar * { transition: none !important; }
+
+.sidebar.collapsed { width: 60px; overflow-x: hidden; }
+.main.sidebar-collapsed { margin-left: 60px; }
+
+/* Ocultar textos en modo colapsado */
+.sidebar.collapsed .nav-section,
+.sidebar.collapsed .nav-item span:not(.icon),
+.sidebar.collapsed .sidebar-logo a,
+.sidebar.collapsed .sidebar-user .user-name,
+.sidebar.collapsed .sidebar-user .user-role,
+.sidebar.collapsed .sidebar-user .btn-logout span { display: none; }
+
+.sidebar.collapsed .nav-item { justify-content: center; padding: 10px; }
+.sidebar.collapsed .nav-item .icon { width: auto; margin: 0; }
+.sidebar.collapsed .nav-item.active::before { display: none; }
+
+.sidebar.collapsed .sidebar-logo {
+  justify-content: center !important;
+  padding: 16px 0 !important;
+}
+.sidebar.collapsed .btn-sidebar-toggle { margin: 0 auto; }
+.sidebar.collapsed .sidebar-user {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 0;
+}
+.sidebar.collapsed .btn-logout { width: auto; padding: 6px; justify-content: center; }
+
+/* Tooltip en modo colapsado */
+.sidebar.collapsed .nav-item { position: relative; }
+.sidebar.collapsed .nav-item::after {
+  content: attr(data-tooltip);
+  position: absolute; left: 68px;
+  background: var(--bg3); color: var(--text);
+  padding: 5px 12px; border-radius: var(--radius-sm);
+  font-size: 0.76rem; white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  border: 1px solid var(--border2);
+  transition: opacity 0.15s; z-index: 200;
+  font-family: var(--font);
+}
+.sidebar.collapsed .nav-item:hover::after { opacity: 1; }
+/* Badge: pre-collapsed igual que collapsed */
+html.sidebar-pre-collapsed .nav-badge-inline { display: none; }
+html.sidebar-pre-collapsed .nav-badge { display: inline-block; }

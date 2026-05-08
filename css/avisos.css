@@ -1,0 +1,161 @@
+/* ──────────────────────────────────────────────────────────
+   AVISOS — UI principal limpio
+   Separado: HEADER / CONTENIDO / TABLA
+────────────────────────────────────────────────────────── */
+
+
+/* ───────────────────────── HEADER ───────────────────────── */
+
+.avisos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* importante para subtítulo */
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.avisos-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.avisos-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+
+/* ───────────────────────── SUBTEXTO ───────────────────────── */
+
+.section-sub {
+    color: var(--text3);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+
+/* ───────────────────────── CONTENIDO ───────────────────────── */
+
+.avisos-content {
+    margin-top: 10px;
+}
+
+
+/* ───────────────────────── CARD / TABLE ───────────────────────── */
+
+.card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.table-wrap {
+    width: 100%;
+    overflow: auto;
+}
+
+
+/* ───────────────────────── TABLE ───────────────────────── */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text3);
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+tr:hover {
+    background: var(--bg3);
+    cursor: pointer;
+}
+
+
+/* ───────────────────────── TEXT HELPERS ───────────────────────── */
+
+.text-sm {
+    font-size: 0.8rem;
+}
+
+.mono {
+    font-family: var(--mono);
+}
+
+
+/* ───────────────────────── BOTONES ACCIONES ───────────────────────── */
+
+.btn-group {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-icon {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 8px;
+    cursor: pointer;
+    color: var(--text3);
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon:hover {
+    background: var(--bg3);
+    color: var(--text);
+    border-color: var(--border2);
+}
+
+.btn-icon.btn-danger:hover {
+    color: var(--red);
+    border-color: var(--red);
+    background: rgba(255, 107, 135, 0.08);
+}
+
+
+/* ───────────────────────── EMPTY STATE ───────────────────────── */
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--text3);
+}
+
+
+/* ───────────────────────── RESPONSIVE ───────────────────────── */
+
+@media (max-width: 900px) {
+    table {
+        font-size: 0.85rem;
+    }
+}
+/* padding igual que clientes */
+th { padding: 8px 12px; }
+td { padding: 8px 12px; }
+
+/* hover igual que clientes */
+tr:hover { background: rgba(53,242,192,0.04); }
+
+/* badges estado */
+.badge-urgente   { background: rgba(220,38,38,0.15);  color: #dc2626; border: 1px solid rgba(220,38,38,0.25); }
+.badge-aviso     { background: rgba(249,115,22,0.15); color: #f97316; border: 1px solid rgba(249,115,22,0.25); }
+.badge-pendiente { background: rgba(245,166,35,0.15); color: #f5a623; border: 1px solid rgba(245,166,35,0.25); }
+.badge-ok        { background: rgba(0,229,160,0.15);  color: var(--green); border: 1px solid rgba(0,229,160,0.25); }

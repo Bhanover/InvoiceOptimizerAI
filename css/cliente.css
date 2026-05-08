@@ -1,0 +1,83 @@
+/* ── Cliente - ficha mínima optimizado ── */
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+.breadcrumb a { color: var(--green); text-decoration: none; }
+.breadcrumb .active { color: var(--text); }
+
+/* Cabecera cliente */
+.cliente-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.cliente-header h1 { margin: 0; font-size: 1.25rem; }
+.cliente-meta {
+  font-size: 0.78rem;
+  color: var(--text3);
+  display: flex;
+  gap: 10px;
+}
+
+/* Tabs */
+.cliente-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text3);
+  padding: 6px 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s, border-color 0.18s;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Grid ficha cliente */
+.ficha-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.ficha-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.ficha-row:last-child { border-bottom: none; }
+.ficha-label { font-size: 0.85rem; color: var(--text3); font-weight: 600; }
+.ficha-val { font-size: 0.85rem; color: var(--text); text-align: right; font-family: var(--mono); }
+
+/* Badges estados de factura */
+.badge {
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.7rem;
+  display: inline-block;
+}
+.badge-pendiente  { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(255,184,77,0.22); }
+.badge-sin-oferta { background: rgba(255,61,90,0.15); color: var(--red); }
+.badge-enviada    { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(114,184,255,0.22); }
+.badge-derivado   { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(167,147,255,0.22); }
+.badge-contratado { background: var(--green-dim); color: var(--green); border: 1px solid rgba(53,242,192,0.22); }
+.badge-rechazado  { background: rgba(255,107,53,0.15); color: var(--red); }
+
+/* Responsive */
+@media (max-width:768px) { .ficha-grid { grid-template-columns: 1fr; } }
+

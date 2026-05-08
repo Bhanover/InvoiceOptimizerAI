@@ -1,0 +1,152 @@
+/* ── OFERTAS REVISIÓN — modal de revisión de importación PDF ─
+   Cargado junto a ofertas.css solo en pages/ofertas.php
+──────────────────────────────────────────────────────────── */
+ 
+/* ── Modal ancho ─────────────────────────────────────────── */
+#modal-revision .modal-box {
+    max-width: min(1200px, 96vw);
+    width: 96vw;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+ 
+#modal-revision .modal-body {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 0;
+}
+ 
+/* ── Email row ───────────────────────────────────────────── */
+.revision-email-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.83rem;
+    color: var(--text3);
+}
+ 
+.revision-email-row input {
+    flex: 1;
+    max-width: 300px;
+}
+ 
+.revision-email-row small {
+    font-size: 0.75rem;
+}
+ 
+/* ── Zona scroll ─────────────────────────────────────────── */
+.tabla-scroll {
+    flex: 1;
+    overflow: auto;
+    min-height: 0;
+    margin-top: 12px;
+}
+ 
+.tabla-scroll::-webkit-scrollbar {
+    height: 3px; /* horizontal */
+  
+}
+
+
+.tabla-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+/* ── Tabla interna ───────────────────────────────────────── */
+.rev-table {
+    width: 100%;
+    /* Ancho mínimo = suma de todas las columnas + gaps
+       Nombre:160 Com:130 Ver:70 Tipo:65 Pot×6:85×6 FeeMin:75 FeeMax:75 + gaps ~100
+       Total ≈ 1185px */
+    min-width: 1185px;
+}
+ 
+/* ── Grid compartido entre cabecera y filas ──────────────── */
+/* Columnas: Nombre | Comercializadora | Versión | Tipo | Pot×6 | FeeMin | FeeMax */
+.rev-header,
+.rev-item {
+    display: grid;
+    grid-template-columns: repeat(var(--rev-cols, 12), minmax(110px, 1fr));
+    gap: 6px;
+    align-items: center;
+    padding: 0 4px;
+}
+ 
+/* ── Cabecera sticky ─────────────────────────────────────── */
+.rev-header {
+    padding: 6px 4px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.67rem;
+    color: var(--text3);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    position: sticky;
+    top: 0;
+    background: var(--bg2);
+    z-index: 2;
+}
+ 
+/* ── Filas ───────────────────────────────────────────────── */
+.rev-item {
+    padding: 7px 4px;
+    border-bottom: 1px solid var(--border);
+}
+ 
+.rev-item:last-child {
+    border-bottom: none;
+}
+ 
+.rev-item:hover {
+    background: rgba(255,255,255,0.02);
+}
+ 
+/* Cada celda no puede desbordar su columna */
+.rev-item > div,
+.rev-header > div {
+    min-width: 0;
+    overflow: hidden;
+}
+ 
+/* ── Inputs ghost ────────────────────────────────────────── */
+.rev-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    /* CRÍTICO: evita que el input desborde su celda */
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+    outline: none;
+    cursor: text;
+    font-size: 0.79rem;
+    font-family: var(--font);
+    color: var(--text);
+    transition: border-bottom-color 0.15s;
+    /* Texto cortado con ellipsis si no cabe */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+ 
+.rev-input:focus {
+    border-bottom-color: var(--cyan);
+    /* Al editar mostramos el texto completo */
+    overflow: visible;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+ 
+.rev-input--muted { color: var(--text3); }
+.rev-input--cyan  { color: var(--cyan);  font-family: var(--mono); font-size: 0.77rem; }
+.rev-input--amber { color: var(--amber); font-family: var(--mono); font-size: 0.77rem; }
+.rev-input--bold  { font-weight: 600; }

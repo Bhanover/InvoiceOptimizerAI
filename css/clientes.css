@@ -1,0 +1,13 @@
+/* LISTA DE CLIENTES */
+.badge-lead     { background: rgba(245,166,35,0.15);  color: #f5a623; border: 1px solid rgba(245,166,35,0.25); }
+.badge-activo   { background: rgba(0,229,160,0.15);   color: var(--green); border: 1px solid rgba(0,229,160,0.25); }
+.badge-inactivo { background: rgba(120,120,120,0.15); color: var(--text3); border: 1px solid rgba(120,120,120,0.2); }
+
+/* tabla clientes */
+.table-wrap table { width:100%; border-collapse: collapse; }
+.table-wrap th, .table-wrap td { padding:8px 12px; border-bottom:1px solid var(--border); }
+.table-wrap tr:hover { background: rgba(53,242,192,0.04); }
+
+/* filtros y pagination */
+.filters { display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap; }
+.pagination { display:flex; gap:6px; margin-top:12px; }

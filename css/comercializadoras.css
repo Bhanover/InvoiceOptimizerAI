@@ -1,0 +1,19 @@
+/* ── Comercializadoras — estilos adicionales ── */
+
+.com-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.com-dato {
+    font-size: 0.82rem;
+    color: var(--text3);
+    font-weight: 500;
+}
+#modal-crear-com .modal-box,
+#modal-editar-com .modal-box {
+    max-width: 560px;
+    width: 100%;
+}
